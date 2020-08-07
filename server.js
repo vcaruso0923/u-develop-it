@@ -4,11 +4,11 @@ const app = express();
 const inputCheck = require("./utils/inputCheck.js")
 const db = require("./db/database")
 const apiRoutes = require('./routes/apiRoutes');
-app.use('/api', apiRoutes);
 
 // Express middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json())
+app.use('/api', apiRoutes);
 
 // Default response for any other request(Not Found) Catch all
 app.use((req, res) => {
